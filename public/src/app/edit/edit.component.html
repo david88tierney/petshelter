@@ -1,0 +1,64 @@
+<h3>Edit This Pet</h3>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+<div class="container">
+<h3>Know of a pet needing a home?</h3>
+  <div class="error">
+    <p *ngIf="errors.name"> {{errors.name.message}}</p>
+    <p *ngIf="errors.species"> {{errors.species.message}}</p>
+    <p *ngIf="errors.description"> {{errors.description.message}}</p>
+  </div>
+<fieldset>
+  <form class="form-horizontal" (submit)="update(pet._id)">
+
+    <div class="form-group">
+      <p class="control-label col-sm-2">Pet Name:</p>
+        <div class="col-sm-10">
+          <input class="form-control" type="text" name="pet.name" [(ngModel)]= "pet.name">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p class="control-label col-sm-2">Pet Species:</p>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" name="pet.species" [(ngModel)]= "pet.species">
+          </div>
+      </div>
+
+      <div class="form-group">
+          <p class="control-label col-sm-2">Description:</p>
+            <div class="col-sm-10">
+              <input class="form-control" type="text" name="pet.description" [(ngModel)]= "pet.description">
+            </div>
+        </div>
+
+    <div class="form-group">
+        <p class="control-label col-sm-2">Skill One:</p>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" name="pet.skillOne" [(ngModel)]= "pet.skillOne">
+          </div>
+      </div>
+
+      <div class="form-group">
+          <p class="control-label col-sm-2">Skill One:</p>
+            <div class="col-sm-10">
+              <input class="form-control" type="text" name="pet.skillTwo" [(ngModel)]= "pet.skillTwo">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <p class="control-label col-sm-2">Skill One:</p>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" name="pet.skillThree" [(ngModel)]= "pet.skillThree">
+              </div>
+          </div>
+    <input class="btn-primary" type="submit" value="Update Info on Pet" />
+
+  </form>
+</fieldset>
+</div>

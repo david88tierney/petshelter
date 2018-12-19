@@ -1,0 +1,18 @@
+<h2>Details about {{ pet.name }}</h2>
+<table class="table">
+  <tr>
+    <th>Species</th>
+    <th>Description</th>
+    <th>Skills</th>
+  </tr>
+  <tr>
+    <td> {{ pet.species}} </td>
+    <td> {{ pet.description }}</td>
+    <td>  {{pet.skillOne}}
+          {{pet.skillTwo}}
+          {{ pet.skillThree }}
+    </td>
+  </tr>
+</table>
+
+<button class="btn-danger" (click) = "delete(pet._id)">Adopt!</button>

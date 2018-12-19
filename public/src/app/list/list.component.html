@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+<a [routerLink]="['/newpet']">Add a pet to the shelter</a>
+<div class="">
+<table class="table">
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Species</th>
+    <th scope="col">Action!</th>
+  </tr>
+  <tr *ngFor="let pet of pets">
+    <td>{{ pet.name }}</td>
+    <td>{{ pet.species }}</td>
+    <td>
+      <a [routerLink]="['/pet', pet._id]"><button class="btn-success">Read about this Animal</button></a>
+      <a [routerLink] = "['/edit' , pet._id]"><button class="btn-info">Edit this Animal</button></a>
+
+    </td>
+  </tr>
+</table>
+</div>
